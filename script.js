@@ -1,18 +1,14 @@
-let numberOfFilms = +prompt('How many movies you watched?', '');
-let personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
+if (4==9) {
+    console.log('OK!');
+} else {
+    console.log('ERROR!');
 }
 
-let answer = prompt('What the last movie you watched?', '');
-let answer2 = prompt('How many points you give ?', '');
-let answer3 = prompt('What the last movie you watched?', '');
-let answer4 = prompt('How many points you give ?', '');
-
-personalMovieDB.movies[answer] = answer2;
-personalMovieDB.movies[answer3] = answer4;
-
-console.log(personalMovieDB);
+const num = 50;
+if (num<49) {
+    console.log('Error');
+} else if (num > 100) {
+    console.log('too Many');
+} else {
+    console.log('Ok!);
+}
