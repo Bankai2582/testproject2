@@ -1,14 +1,19 @@
-if (4==9) {
-    console.log('OK!');
-} else {
-    console.log('ERROR!');
-}
+let num =50;
 
-const num = 50;
-if (num<49) {
-    console.log('Error');
-} else if (num > 100) {
-    console.log('too Many');
-} else {
-    console.log('Ok!);
+// // while (num<55) {
+// //     console.log(num);
+// //     num++;
+// // }
+
+// do {
+//     console.log(num);
+//     num++;
+// } while (num<55);
+
+for (let i=1; i<10; i++) {
+    if (i === 6) {
+        // break;
+        continue;
+    }
+   console.log(i);
 }
