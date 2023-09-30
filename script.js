@@ -1,38 +1,40 @@
 'use strict';
 
-const numberOfFilms = +prompt('How many movies you watched?', '');
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
+let num = 20;
+
+function showFirstMessage(text) {
+    console.log(text);
+    let num = 10;
+    console.log(num);
+}
+
+showFirstMessage("Hello World");
+console.log(num);
+
+
+function calc(a, b) {
+    return (a+b);
+}
+
+console.log(calc(4, 3));
+console.log(calc(5, 6));
+console.log(calc(10, 6));
+
+function ret() {
+    let num = 50;
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+
+
+const logger = function() {
+    console.log('Hello');
 };
 
+logger();
 
-for (let i = 0; i < 2; i++) {
-    const a = prompt('What the last movie you watched?', ''),
-            b = prompt('How many points you give ?', '');
-
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log('done');
-    } else {
-        console.log('error');
-        i--;
-    }
-}
-
-if (personalMovieDB.count < 10) {
-    alert('You watched so little films');
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-    alert('You are classic viewer');
-} else if (personalMovieDB.count >= 30) {
-    alert('You are crazy!');
-} else {
-    alert('ERROR');
-}
-
-console.log(personalMovieDB);
-
+const calc = (a, b) => a + b;
