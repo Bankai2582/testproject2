@@ -1,44 +1,36 @@
 'use strict';
 
-// const obj = new Object();
+const arr = [15,11,1,2,3,4,5,6,8,33,29];
+arr.sort();
+console.log(arr);
 
-const option = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {
-        console.log('Test');
-    }
+arr.forEach(function(item, i, arr) {
+    console.log(`${i}: ${item} inside array ${arr}`);
+});
+
+
+// arr[99] = 0;
+// console.log(arr.length); // метод ленг показывать последний индекс +1
+// console.log(arr); // из-за того что мы поставили "0" 
+// на 99 место в индексе между последним числом и "0" образовались
+// 92 пустые ячейки и метод ленг выдаст 100.
+
+
+// arr.pop(); // удалить последний элемент массива
+// arr.push(10); // добавить в конец массива 
+// console.log(arr);
+
+// for (let i=0;i<arr.length;i++) {
+//     console.log(arr[i]);
+// };
+
+for (let value of arr) {
+    console.log(value);
 };
 
-option.makeTest();
+const str = prompt('', '');
+const products = str.split(", ");
+products.sort();
+console.log(products.join('; '));
 
-const {border, bg} = option.colors;
-console.log(border);
 
-// console.log(option['colors']['border']);
-
-// delete option.name;
-
-// console.log(option);
-
-// let counter = 0;
-
-// for (let key in option) {
-//     if (typeof(option[key]) === 'object') {
-//         for (let i in option[key]) {
-//             console.log(`Object ${key} Property ${i} his value ${option[key][i]}`);
-//             // counter++;
-//         }
-//     } else {
-//         console.log(`Property ${key} his value ${option[key]}`);
-//         counter++;
-//     }
-// }
-// console.log(counter);
-
-console.log(Object.keys(option).length);
