@@ -1,36 +1,104 @@
 'use strict';
 
-const arr = [15,11,1,2,3,4,5,6,8,33,29];
-arr.sort();
-console.log(arr);
+// let a = 5,
+//     b = a;
 
-arr.forEach(function(item, i, arr) {
-    console.log(`${i}: ${item} inside array ${arr}`);
-});
-
-
-// arr[99] = 0;
-// console.log(arr.length); // метод ленг показывать последний индекс +1
-// console.log(arr); // из-за того что мы поставили "0" 
-// на 99 место в индексе между последним числом и "0" образовались
-// 92 пустые ячейки и метод ленг выдаст 100.
+// b = b + 5;
+// console.log(b);
+// console.log(a);
 
 
-// arr.pop(); // удалить последний элемент массива
-// arr.push(10); // добавить в конец массива 
-// console.log(arr);
-
-// for (let i=0;i<arr.length;i++) {
-//     console.log(arr[i]);
-// };
-
-for (let value of arr) {
-    console.log(value);
+const obj = {
+    a: 5,
+    b: 1
 };
 
-const str = prompt('', '');
-const products = str.split(", ");
-products.sort();
-console.log(products.join('; '));
+// const copy = obj; // ссылка 
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+// function copy1(mainObj) {
+//     let objCopy = {};
+//     let key;
+//     for (key in mainObj) {
+//         objCopy[key] = mainObj[key];
+//     }
+//     return objCopy;
+// }
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+
+// const newNumbers = copy1(numbers);
+
+// newNumbers.a = 10;
+// newNumbers.c.y = 10;
 
 
+// console.log(numbers);
+// console.log(newNumbers);
+// console.log(numbers);
+
+const add = {
+    d: 17,
+    e: 20
+};
+
+const clone = Object.assign({}, add);
+
+clone.d = 125;
+console.log(add);
+console.log(clone);
+
+const oldArr = ['a', 'b', 'c'];
+const newArr = oldArr.slice();
+
+newArr[1] = 'aasdad';
+console.log(newArr);
+console.log(oldArr);
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];
+
+console.log(internet);
+
+function log(a,b,c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+};
+
+const num = [2,7,6];
+
+log(...num);
+
+const array = ['a', 'b'];
+
+const newArray = [...array];
+
+newArray[1] = 'asd';
+
+console.log(array);
+console.log(newArray);
+
+const q = {
+    one: 1,
+    two: 2
+};
+
+const newObj = {...q};
+
+newObj.one = 5;
+console.log(q);
+console.log(newObj);
+// console.log
