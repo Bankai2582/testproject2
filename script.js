@@ -1,47 +1,37 @@
 'use strict';
 
-// To String
+// let x = 5; 
+// alert( x++ );
 
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
-console.log(String(4));
+// console.log(typeof([] + false - null + true));
+// console.log(typeof([] + false - null)); // 'false'
+// console.log([] + false - null + true); // NaN
 
-console.log(typeof( + ''));
+// let y = 1;
+// let x = y = 2;
+// alert(x);
+
+// console.log(typeof([] + 1 + 2));
+// alert( "1"[0] );
+
+// console.log(2 && 1 && null && 0 && undefined);
+
+// console.log(!!( a && b ) и (a && b)); // !! = boolean != a && b
+// alert( null || 2 && 3 || 4 );
+// и запинается на лжи
+// или запинается на правде
+
+// const a = [1, 2, 3]; 
+// const b = [1, 2, 3]; 
+// console.log(Boolean(a == b));
+
+// alert( +"Infinity" ); // infinity = typeof(Number) из-за "+"
+
+// console.log("Ёжик" > "яблоко");
+
+// console.log(0 || "" || 2 || undefined || true || falsе); // 2
 
 
-const num = 5;
 
-console.log("https://vk.com/catalog/" + num);
 
-const fontSize = 26 + 'px';
 
-// TO Number
-// 1
-console.log(typeof(Number('4')));
-// 2
-console.log(typeof(+'4'));
-// 3
-console.log(typeof(parseInt('14px', 10)));
-///
-
-let answ = +prompt('Hello', '');
-
-// To boolean
-//0,'', null, undefined, NaN; - FALSE
-//1
-let switcher = null;
-
-if(switcher) {
-    console.log('Working...');
-}
-
-switcher = 1;
-
-if(switcher) {
-    console.log('Working...');
-}
-
-//2
-console.log(typeof(Boolean('4')));
-//3
-console.log(typeof(!!'444'));
