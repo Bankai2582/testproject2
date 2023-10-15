@@ -1,49 +1,47 @@
 'use strict';
 
-const box = document.getElementById('box');
-// const btns = document.getElementsByTagName('button')[1];
-const btns = document.getElementsByTagName('button');
-const circles = document.getElementsByClassName('circle');
-const hearts = document.querySelectorAll('.heart');
-const wrapper = document.querySelector('.wrapper');
-// hearts.forEach(item => {
-//     console.log(item);
-// });
-// console.log(hearts);
-const oneHeart = document.querySelector('.heart');
+const btns = document.querySelectorAll('button');
 
-// box.style.backgroundColor = 'blue';
-// box.style.width = '500px';
+// btn.onclick = function() {
+//     alert('CLICK!');
+// };
 
-box.style.cssText = 'background-color: yellow; width: 600px';
+// btn.onclick = function() {
+//     alert('SECOND CLICK!');
+// };
 
-btns[1].style.borderRadius = '100%';
-circles[0].style.backgroundColor = 'red';
+// btn.addEventListener('click', () => {
+//     alert('SECOND CLICK!');
+// } );
 
-// for (let i=0; i<hearts.length; i++) {
-//     hearts[i].style.backgroundColor = 'black';
-// }
+// btn.addEventListener('mouseenter', (event) => {
+//     console.log(event.target);
+//     alert('OUCH!');
+//     event.target.remove();
+// } );
+const overlay = document.querySelector('.overlay');
+let i = 0;
+const deleteElement = (event) => {
+        console.log(event.currentTarget);
+        console.log(event.type);
+        // i++;
+        // if (i == 1) {
+        //     btn.removeEventListener('click', deleteElement);
+        // }
+};
 
-hearts.forEach(item => {
-    item.style.backgroundColor = 'yellow';
-})
+// btn.addEventListener('click', deleteElement);
+// overlay.addEventListener('click', deleteElement);
 
-const div = document.createElement('div');
-const text = document.createTextNode('I wam being here');
+btns.forEach(btn => {
+    btn.addEventListener('click', deleteElement);
+});
 
-div.classList.add('black');
+const link = document.querySelector('a');
 
-// document.querySelector('.wrapper').append(div);
+link.addEventListener('click', function(event) {   
+    event.preventDefault();
 
-// wrapper.append(div);
-
-wrapper.prepend(div);
-
-// hearts[0].after(div);
-
-// circles[0].remove();
-
-// hearts[0].replaceWith(circles[0]);
-
-div.innerHTML = '<h1>Hello World</h1>';
+    console.log(event.target);
+});
 
