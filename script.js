@@ -1,47 +1,17 @@
 'use strict';
 
-const btns = document.querySelectorAll('button');
+// console.log(document.head);
+// console.log(document.documentElement);
+// console.log(document.body.childNodes);
+// console.log(document.body.firstElementChild);
+// console.log(document.body.lastChild);
+// console.log(document.querySelector('#current').parentElement);
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
 
-// btn.onclick = function() {
-//     alert('CLICK!');
-// };
+for (let node of document.body.childNodes) {
+    if (node.nodeName == '#text') {
+        continue;
+    }
+    console.log(node);
 
-// btn.onclick = function() {
-//     alert('SECOND CLICK!');
-// };
-
-// btn.addEventListener('click', () => {
-//     alert('SECOND CLICK!');
-// } );
-
-// btn.addEventListener('mouseenter', (event) => {
-//     console.log(event.target);
-//     alert('OUCH!');
-//     event.target.remove();
-// } );
-const overlay = document.querySelector('.overlay');
-let i = 0;
-const deleteElement = (event) => {
-        console.log(event.currentTarget);
-        console.log(event.type);
-        // i++;
-        // if (i == 1) {
-        //     btn.removeEventListener('click', deleteElement);
-        // }
 };
-
-// btn.addEventListener('click', deleteElement);
-// overlay.addEventListener('click', deleteElement);
-
-btns.forEach(btn => {
-    btn.addEventListener('click', deleteElement);
-});
-
-const link = document.querySelector('a');
-
-link.addEventListener('click', function(event) {   
-    event.preventDefault();
-
-    console.log(event.target);
-});
-
