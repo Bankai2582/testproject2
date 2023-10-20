@@ -1,17 +1,43 @@
 'use strict';
 
-// console.log(document.head);
-// console.log(document.documentElement);
-// console.log(document.body.childNodes);
-// console.log(document.body.firstElementChild);
-// console.log(document.body.lastChild);
-// console.log(document.querySelector('#current').parentElement);
-// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
+// touchstart  
+// touchmove
+// touchend
+// touchenter
+// touchleave
+// touchcancel
 
-for (let node of document.body.childNodes) {
-    if (node.nodeName == '#text') {
-        continue;
-    }
-    console.log(node);
+// Доп.события 
+// touches
+// targetTouches
+// changedTouches
 
-};
+window.addEventListener('DOMContentLoaded', () => {
+        const box = document.querySelector('.box');
+
+        box.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+
+            console.log('Start');
+            console.log(e.targetTouches);
+
+        });
+
+        box.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+
+            console.log(e.targetTouches[0].pageX);
+        });
+
+        box.addEventListener('touchend', (e) => {
+            e.preventDefault();
+
+            console.log('ENd');
+        });
+
+
+
+
+
+});
+//asd
