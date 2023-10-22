@@ -1,37 +1,51 @@
 'use strict';
 
-const btns = document.querySelectorAll('button'),
-        wrapper = document.querySelector('.btn-block');
+const btn = document.querySelector('.btn');
+let timerId;
+let i = 0;
+
+function myAnimation() {
+    const elem = document.querySelector('.box');
+    let pos = 0;
+
+    const id = setInterval(frame, 10);
+    function frame() {
+        if (pos == 300) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+        }
+    }
+}
+
+btn.addEventListener('click', myAnimation);
 
 
-// // //console.log(btns[0].classList.length);
-// // console.log(btns[0].classList.item(0));
-// console.log(btns[1].classList.add('red', 'tratatatara'));
-// console.log(btns[3].classList.add('blue'));
-// // // console.log(btns[0].classList.remove('blue'));
-// // // console.log(btns[0].classList.toggle('blue'));
+// btn.addEventListener('click', () => {
+//     // const timerId = setTimeout(logger, 2000);
+//     timerId = setInterval(logger, 500);
 
-// // if (btns[1].classList.contains('red')) {
-// //     console.log('red');
+// });
+
+
+// // function logger() {
+// //     if (i ===3) {
+// //         clearInterval(timerId);
+// //     }
+// //     console.log('text');
+// //     i++;
 // // }
 
-btns[0].addEventListener('click', () => {
-    // if (!btns[1].classList.contains('red')) {
-    //     btns[1].classList.add('red');
-    // } else {
-    //     btns[1].classList.remove('red');
-    // }
-    // === 
-    btns[1].classList.toggle('red');
-})
+// let id = setTimeout(function log(){
+       
+// .
+//     console.log('Hello');
+//     i++;
+//     id = setTimeout(log, 500);
 
-wrapper.addEventListener('click', (e) => {
-    // console.dir(e.target);
-    if (e.target && e.target.matches('button.red')) {
-        console.log('Hello');
-    }
-});
-
-const btn = document.createElement('button');
-btn.classList.add('red');
-wrapper.append(btn);
+//     if (i === 5) {
+//                 clearInterval(id);
+//             }
+// }, 500);
