@@ -1,51 +1,22 @@
 'use strict';
 
-const btn = document.querySelector('.btn');
-let timerId;
-let i = 0;
+const now = new Date();
 
-function myAnimation() {
-    const elem = document.querySelector('.box');
-    let pos = 0;
+// console.log(now.getFullYear());
+// console.log(now.getMonth());
+// console.log(now.getDate());
+// console.log(now.getDay());
+// console.log(now.getHours());
+// console.log(now.getUTCHours());
 
-    const id = setInterval(frame, 10);
-    function frame() {
-        if (pos == 300) {
-            clearInterval(id);
-        } else {
-            pos++;
-            elem.style.top = pos + "px";
-            elem.style.left = pos + "px";
-        }
-    }
+// console.log(now.getTimezoneOffset());
+// console.log(now.getTime());
+
+let start = new Date();
+for (let i=0; i < 100000000; i++) {
+    let some = i ** 3;
 }
 
-btn.addEventListener('click', myAnimation);
+let end = new Date();
 
-
-// btn.addEventListener('click', () => {
-//     // const timerId = setTimeout(logger, 2000);
-//     timerId = setInterval(logger, 500);
-
-// });
-
-
-// // function logger() {
-// //     if (i ===3) {
-// //         clearInterval(timerId);
-// //     }
-// //     console.log('text');
-// //     i++;
-// // }
-
-// let id = setTimeout(function log(){
-       
-// .
-//     console.log('Hello');
-//     i++;
-//     id = setTimeout(log, 500);
-
-//     if (i === 5) {
-//                 clearInterval(id);
-//             }
-// }, 500);
+alert(`Cikle otrabotaz za ${end - start} millicekynd`)
