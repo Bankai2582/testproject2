@@ -1,22 +1,28 @@
 'use strict';
 
-const now = new Date();
+const box = document.querySelector('.box');
+const btn = document.querySelector('button');
+// const width = box.clientWidth;
+// const height = box.clientHeight;
+// const width = box.offsetWidth;
+// const height = box.offsetHeight;
+const width = box.scrollWidth;
+const height = box.scrollHeight;
 
-// console.log(now.getFullYear());
-// console.log(now.getMonth());
-// console.log(now.getDate());
-// console.log(now.getDay());
-// console.log(now.getHours());
-// console.log(now.getUTCHours());
+console.log(width, height);
 
-// console.log(now.getTimezoneOffset());
-// console.log(now.getTime());
+btn.addEventListener('click', () => {
+    box.style.height = box.scrollHeight + 'px';
+    console.log(box.scrollTop);
+});
 
-let start = new Date();
-for (let i=0; i < 100000000; i++) {
-    let some = i ** 3;
-}
+console.log(box.getBoundingClientRect().top);
 
-let end = new Date();
+const style = window.getComputedStyle(box);
 
-alert(`Cikle otrabotaz za ${end - start} millicekynd`)
+console.log(style.display);
+
+console.log(document.documentElement.scrollTop);
+
+// window.scrollBy - от места где находится пользователь
+// window.scrollTo - от начала страницы
