@@ -1,28 +1,23 @@
 'use strict';
 
-const box = document.querySelector('.box');
-const btn = document.querySelector('button');
-// const width = box.clientWidth;
-// const height = box.clientHeight;
-// const width = box.offsetWidth;
-// const height = box.offsetHeight;
-const width = box.scrollWidth;
-const height = box.scrollHeight;
+function User(name, id) {
+    this.name = name;
+    this.id = id;
+    this.human = true;
+    this.hello = function() {
+        console.log(`Hello ${this.name}`)
+    };
+}
 
-console.log(width, height);
+User.prototype.exit = function(name) {
+    console.log(`User ${this.name} is exit`)
+}
 
-btn.addEventListener('click', () => {
-    box.style.height = box.scrollHeight + 'px';
-    console.log(box.scrollTop);
-});
+const ivan = new User('Ivan', 28);
+const alex = new User('Alex', 33);
 
-console.log(box.getBoundingClientRect().top);
+ivan.hello();
+alex.exit();
 
-const style = window.getComputedStyle(box);
-
-console.log(style.display);
-
-console.log(document.documentElement.scrollTop);
-
-// window.scrollBy - от места где находится пользователь
-// window.scrollTo - от начала страницы
+// console.log(ivan);
+// console.log(alex);
